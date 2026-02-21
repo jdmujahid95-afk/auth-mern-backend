@@ -7,8 +7,16 @@ dotenv.config();
 
 const app = express();
 
+//  CORS Configuration 
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://auth-mern-frontend-nu.vercel.app"
+  ],
+  credentials: true
+}));
+
 // Middleware
-app.use(cors());
 app.use(express.json());
 
 // Connect DB
